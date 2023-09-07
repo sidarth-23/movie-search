@@ -60,25 +60,26 @@ function App() {
 
   const handleAddFavourite = (item) => {
     const dataToAdd = [item.imdbID, item.Title, item.Year, item.Poster]
-    if (userArray[2].find((fav) => fav[0] === dataToAdd[0])) return;
+    if (!userArray[2] || !userArray[2].find((fav) => fav[0] === dataToAdd[0])) {
+      const hostData = JSON.parse(localStorage.getItem("userData"))
+      const index = hostData.findIndex((item) => userArray[0] === item[0])
 
-    const hostData = JSON.parse(localStorage.getItem('userData'));
-    const index = hostData.findIndex(item => userArray[0] === item[0]);
+      const updatedUserArray = [...userArray]
+      if (updatedUserArray[2])
+        updatedUserArray[2] = [...updatedUserArray[2], dataToAdd];
+      else updatedUserArray[2] = [dataToAdd];
+      hostData[index] = updatedUserArray
+      localStorage.setItem("userData", JSON.stringify(hostData))
 
-    const updatedUserArray = [...userArray]
-    updatedUserArray[2] = [...updatedUserArray[2], dataToAdd]
-
-    hostData[index] = updatedUserArray;
-    localStorage.setItem('userData', JSON.stringify(hostData))
-
-    setUserArray(updatedUserArray);
+      setUserArray(updatedUserArray)
+    }
   }
 
   const handleDeleteFavourite = (itemId) => {
     const updatedFavorites = userArray[2].filter((fav) => fav[0] !== itemId)
 
-    const hostData = JSON.parse(localStorage.getItem("userData"));
-    const index = hostData.findIndex((item) => userArray[0] === item[0]);
+    const hostData = JSON.parse(localStorage.getItem("userData"))
+    const index = hostData.findIndex((item) => userArray[0] === item[0])
 
     const updatedUserArray = [...userArray]
     updatedUserArray[2] = updatedFavorites
@@ -86,7 +87,7 @@ function App() {
     hostData[index] = updatedUserArray
     localStorage.setItem("userData", JSON.stringify(hostData))
 
-    setUserArray(updatedFavorites);
+    setUserArray(updatedFavorites)
   }
 
   const handleSignup = (user, password) => {
@@ -95,9 +96,9 @@ function App() {
       return
     }
 
-    const hostData = JSON.parse(localStorage.getItem("userData"));
+    const hostData = JSON.parse(localStorage.getItem("userData"))
     const toSend = [...hostData, [user, password, []]]
-    localStorage.setItem('userData', JSON.stringify(toSend));
+    localStorage.setItem("userData", JSON.stringify(toSend))
   }
 
   const handleLogout = () => {
