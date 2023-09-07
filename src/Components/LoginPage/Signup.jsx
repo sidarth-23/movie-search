@@ -27,7 +27,7 @@ export default function Signup(props) {
   }
 
   return (
-    <div className="h-fill w-full bg-opacity-40 bg-black rounded-lg cont p-6 hover:scale-110 md:hover:-translate-x-10 md:focus:-translate-x-10 hover:bg-opacity-70 duration-100 flex flex-col justify-center items-center">
+    <div className="h-fill w-full bg-opacity-40 bg-black rounded-lg cont p-6 md:hover:scale-110 md:hover:-translate-x-10 md:focus:-translate-x-10 md:hover:bg-opacity-70 duration-100 flex flex-col justify-center items-center">
       <h1 className="text-2xl">Signup for your own favourites stored</h1>
       <form onSubmit={handleSubmit} action="submit">
         <div className="flex flex-col p-2">

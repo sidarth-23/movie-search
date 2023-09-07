@@ -1,6 +1,6 @@
 export default function Instructions() {
   return (
-    <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6 hover:scale-110 md:hover:translate-x-10 hover:bg-opacity-70 duration-100">
+    <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6 md:hover:scale-110 md:hover:translate-x-10 md:hover:bg-opacity-70 duration-100">
       <h1 className="font-bold text-2xl">Instructions</h1>
       <ul className="list-disc list-inside">
         <li>The sample username and password is</li>

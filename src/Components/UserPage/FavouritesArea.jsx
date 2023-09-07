@@ -6,7 +6,7 @@ export default function FavouritesArea(props) {
 if (!items || items.length === 0) {
     return (
       <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6 duration-100 flex justify-center items-center">
-        <p className="text-8xl">No Favourites to Show !!</p>
+        <p className="text-6xl md:text-8xl">No Favourites to Show !!</p>
       </div>
     )
   }

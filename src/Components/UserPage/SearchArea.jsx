@@ -15,9 +15,9 @@ export default function SearchArea(props) {
   }
 
   return (
-    <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6   duration-100 flex flex-col">
+    <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6   duration-100 flex flex-col ">
       <div className="flex flex-col mb-3">
-        <form onSubmit={formHandler} action="submit" className="flex justify-between">
+        <form onSubmit={formHandler} action="submit" className="flex flex-col justify-between h-36 md:flex-row">
           <div className="flex flex-col">
             <label htmlFor="search"> Search</label>
             <input
