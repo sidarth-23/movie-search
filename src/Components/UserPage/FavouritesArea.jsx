@@ -11,7 +11,7 @@ if (!items || items.length === 0) {
     )
   }
   return (
-    <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6  hover:bg-opacity-70 duration-100">
+    <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6  md:hover:bg-opacity-70 duration-100">
       <p className="text-2xl">My Favourites</p>
       <div className="flex flex-wrap justify-center">
         {items.map((item) => (
