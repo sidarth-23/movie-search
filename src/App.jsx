@@ -87,7 +87,7 @@ function App() {
     hostData[index] = updatedUserArray
     localStorage.setItem("userData", JSON.stringify(hostData))
 
-    setUserArray(updatedFavorites)
+    setUserArray(updatedUserArray)
   }
 
   const handleSignup = (user, password) => {
