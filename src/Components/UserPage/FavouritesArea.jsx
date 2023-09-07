@@ -3,7 +3,7 @@ import FavouriteCard from "./FavouritesCard"
 export default function FavouritesArea(props) {
   const items = props.addFavourite
 
-if (items.length === 0) {
+if (!items || items.length === 0) {
     return (
       <div className="h-full w-full bg-opacity-40 bg-black rounded-lg cont p-6 duration-100 flex justify-center items-center">
         <p className="text-8xl">No Favourites to Show !!</p>
